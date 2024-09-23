@@ -4,13 +4,13 @@ on:
   pull_request_target:
     types: 
       - closed
-    branches:
-      - test
 
 jobs:
   test:
     name: Test
-    if: ${{ github.event.pull_request.merged == true }}
+    if: |
+      github.event.pull_request.merged == true &&
+      startsWith(github.head_ref, 'test')
     runs-on: ubuntu-latest
     steps:
       - name: Do Something lol
