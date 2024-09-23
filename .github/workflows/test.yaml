@@ -2,7 +2,8 @@ name: Test thing
 
 on:
   pull_request_target:
-    types: [closed]
+    types: 
+      - closed
     branches:
       - test
 
